@@ -1,0 +1,26 @@
+// Задание 1
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите строку из 0 и 1:");
+        string input = Console.ReadLine();
+
+        try
+        {
+            int result = Convert.ToInt32(input, 2); 
+            Console.WriteLine($"Результат: {result}");
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Неправильный ввод. Введите строку из 0 и 1.");
+        }
+        catch (OverflowException)
+        {
+            Console.WriteLine("Выход за границы диапазона int.");
+        }
+    }
+}
